@@ -6,7 +6,7 @@
 /*   By: ainthana <ainthana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:05:20 by ainthana          #+#    #+#             */
-/*   Updated: 2024/11/19 13:45:40 by ainthana         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:47:20 by ainthana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	k = ft_max((ft_strlen(s) - start), 0);
+	if (len > k)
+		len = k;
 	str = malloc(sizeof(char) * (ft_min(k, len) + 1));
 	if (!str)
 		return (NULL);
