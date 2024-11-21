@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:08:05 by ainthana          #+#    #+#             */
-/*   Updated: 2024/11/21 16:23:39 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:56:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,13 @@ static int  ft_count(char const *str, char c)
     while (str[i])
     {
         if (str[i] != c)
+        {
             j++;
+            while (str[i] != c && str[i])
+                i++;
+            if (str[i] == '\0')
+                return (j);
+        }
         i++;
     }
     return (j);
